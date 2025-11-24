@@ -1,7 +1,9 @@
 # Xiusi
 
 本项目为Hills Education & Technology官网项目，使用前端Angular框架。
+
 This project is the official website for Hills Education & Technology, built using the Angular front-end framework.
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
 
 ## Development server
