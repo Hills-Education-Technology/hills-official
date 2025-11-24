@@ -1,4 +1,4 @@
-# Xiusi
+# Hills Official Website
 
 本项目为Hills Education & Technology官网项目，使用前端Angular框架。
 
