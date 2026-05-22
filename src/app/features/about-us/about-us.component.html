@@ -1,48 +1,100 @@
-<xs-shared-bg-title
-  [title]="title | translate"
-  [subtitle]="subtitle | translate"
-  [bgUrl]="bgUrl">
-</xs-shared-bg-title>
-
-<main
-  class="max-w-6xl mx-auto px-4 py-16 animate-enter fade-in-10 animate-duration-2000">
-  <section class="mb-12">
-    <h2 class="text-4xl font-bold text-center mb-8">
-      <span class="p-text-title">{{'header.aboutUs' | translate }}</span>
-    </h2>
-    <div class="mb-4" [innerHtml]="'aboutUs.intro' | translate"></div>
-  </section>
-
-  <section class="mb-12 relative">
-    <h2 class="text-4xl font-bold text-center mb-8">
-      <span class="p-text-title">{{'aboutUs.highlights' | translate}}</span>
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      @for (feature of features; track feature.title) {
-        <p-card
-          class="flex min-y-full"
-          styleClass="text-center transform transition-all duration-300 hover:-translate-y-2">
-          <ng-template #header>
-            <img
-              [src]="feature.image"
-              [alt]="feature.title"
-              class="h-full w-full object-cover object-center" />
-          </ng-template>
-          <h3 class="text-xl font-semibold mb-3">
-            <span class="p-text-secondary">{{ feature.title | translate}}</span>
-          </h3>
-          <p class="p-text-normal">{{ feature.description ?? '' | translate }}</p>
-        </p-card>
-      }
-    </div>
-  </section>
-
-  <section class="mb-12">
-    <h2 class="text-4xl font-bold text-center mb-8">
-      <span class="p-text-title">{{ 'aboutUs.idealStudent' | translate }}</span>
-    </h2>
-    <p class="p-text-normal text-center">
-      {{'aboutUs.idealStudentDesc' | translate }}
+<!-- Hero -->
+<section
+  class="relative w-full h-80 md:h-96 flex items-end bg-cover bg-center mt-16"
+  style="background-image: url('/images/bg_teachers.png')">
+  <div class="absolute inset-0 bg-black/55"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pb-12 w-full">
+    <h1 class="text-5xl font-bold text-white mb-4">About us</h1>
+    <p class="text-white/90 text-xl max-w-xl leading-relaxed">
+      A structured approach to learning, centred on clarity of thought, depth of understanding,
+      and long-term intellectual development.
     </p>
-  </section>
-</main>
+  </div>
+</section>
+
+<!-- Philosophy Cards -->
+<section class="py-20 px-6 bg-white">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+
+    <div class="flex gap-5">
+      <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mt-1">
+        <i class="pi pi-user text-gray-600 text-sm"></i>
+      </div>
+      <div>
+        <h3 class="text-base font-bold text-indigo-700 mb-3">Our Perspective</h3>
+        <p class="text-gray-700 text-sm leading-relaxed mb-3">
+          Education is a process of developing understanding rather than accumulating information.
+        </p>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Our students analyse ideas carefully, question assumptions, and work through unfamiliar
+          problems with clarity and structure. Over time, this leads to a more stable and flexible
+          understanding of their subject.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex gap-5">
+      <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mt-1">
+        <i class="pi pi-graduation-cap text-gray-600 text-sm"></i>
+      </div>
+      <div>
+        <h3 class="text-base font-bold text-indigo-700 mb-3">Our Approach</h3>
+        <p class="text-gray-700 text-sm leading-relaxed mb-3">
+          Our teaching draws on the Oxford tutorial model, where learning takes place through
+          discussion and reasoning.
+        </p>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          We explore ideas in depth, focusing on how conclusions are reached rather than just what
+          the answers are. Our students refine their thinking step by step, developing how they
+          engage with new and challenging material.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex gap-5">
+      <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mt-1">
+        <i class="pi pi-lightbulb text-gray-600 text-sm"></i>
+      </div>
+      <div>
+        <h3 class="text-base font-bold text-indigo-700 mb-3">Independent Thinking</h3>
+        <p class="text-gray-700 text-sm leading-relaxed mb-3">
+          Students often differ in how they respond to unfamiliar questions. Progress depends on
+          the ability to organise ideas clearly, remain engaged with uncertainty, and continue to
+          apply reasoning without handholding.
+        </p>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          Our teaching nurtures independence, increasing students' confidence in their own thinking.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex gap-5">
+      <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center mt-1">
+        <i class="pi pi-book text-gray-600 text-sm"></i>
+      </div>
+      <div>
+        <h3 class="text-base font-bold text-indigo-700 mb-3">A Long-Term View</h3>
+        <p class="text-gray-700 text-sm leading-relaxed mb-3">
+          Academic development is a continuous process that goes beyond simply succeeding with an
+          application.
+        </p>
+        <p class="text-gray-700 text-sm leading-relaxed">
+          We build understanding through sustained engagement, careful reading, and reflection over
+          time. This leads to more adaptable and resilient knowledge.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="max-w-6xl mx-auto mt-12">
+    <a
+      routerLink="/tutors"
+      class="inline-block bg-indigo-700 hover:bg-indigo-800 text-white font-medium px-8 py-3 rounded transition-colors">
+      Meet the Founder
+    </a>
+  </div>
+</section>
+
+<!-- Contact Footer -->
+<xs-contact-footer></xs-contact-footer>

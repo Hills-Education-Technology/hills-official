@@ -1,0 +1,38 @@
+<!-- Page Content -->
+<div class="mt-16 min-h-screen bg-white">
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+
+      <!-- Left: Heading -->
+      <div class="md:sticky md:top-28">
+        <h1 class="text-5xl font-bold text-indigo-900 leading-tight mb-6">
+          Book a<br />Consultation
+        </h1>
+        <p class="text-gray-600 leading-relaxed max-w-xs">
+          A structured first conversation to understand your goals, assess your current position
+          and outline clear next steps.
+        </p>
+      </div>
+
+      <!-- Right: Info Sections -->
+      <div class="space-y-10">
+        @for (section of sections; track section.number) {
+          <div>
+            <div class="flex items-center gap-4 mb-3">
+              <span class="text-sm font-semibold text-gray-400">{{ section.number }}</span>
+              <div class="h-px flex-1 bg-indigo-700"></div>
+              <span class="text-base font-bold text-indigo-700">{{ section.title }}</span>
+            </div>
+            @for (para of section.paragraphs; track $index) {
+              <p class="text-gray-700 text-sm leading-relaxed mb-3">{{ para }}</p>
+            }
+          </div>
+        }
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Contact Footer -->
+<xs-contact-footer></xs-contact-footer>

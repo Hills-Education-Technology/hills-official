@@ -1,30 +1,23 @@
-<section
-  id="{{ HEADER_SECTOR }}"
-  class="fixed top-0 left-0 right-0 z-50 bg-transparent transition-all duration-300">
-  <p-menubar [model]="items">
-    <ng-template #start>
-      <a routerLink="{{ MAIN_PAGE }}">
-        <img src="/images/logo.png" class="h-[70px]" alt="Logo" />
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-5 flex items-center justify-between h-16">
+    <a routerLink="/home" class="flex-shrink-0">
+      <img src="/images/logo.png" class="h-12" alt="Hills Education & Technology" />
+    </a>
+    <nav class="flex items-center gap-7">
+      @for (item of navItems; track item.route) {
+        <a
+          [routerLink]="item.route"
+          routerLinkActive="text-indigo-700 font-semibold"
+          class="text-gray-700 hover:text-indigo-700 transition-colors text-sm font-medium">
+          {{ item.label }}
+        </a>
+      }
+      <a
+        routerLink="/book-a-consultation"
+        routerLinkActive="bg-indigo-700 text-white"
+        class="border border-indigo-700 text-indigo-700 hover:bg-indigo-700 hover:text-white px-4 py-1.5 rounded text-sm font-medium transition-colors">
+        Book a consultation
       </a>
-    </ng-template>
-    <ng-template #item let-item let-root="root">
-      <div class="p-4 hover:cursor-pointer relative flex items-center">
-        @if (item.badge) {
-          <div class="flex items-center relative">
-            <i [class]="item.icon"></i>
-            <span class="mx-1">{{ item.label | translate }}</span>
-            <span class="absolute -top-2 -right-4 text-xs gradient-text rounded-badge">
-              {{item.badge}}
-            </span>
-          </div>
-        } @else {
-          <i [class]="item.icon"></i>
-          <span class="mx-1">{{ item.label | translate }}</span>
-        }
-      </div>
-    </ng-template>
-    <ng-template #end>
-      <xs-shared-translate-button></xs-shared-translate-button>
-    </ng-template>
-  </p-menubar>
-</section>
+    </nav>
+  </div>
+</header>
