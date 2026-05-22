@@ -1,0 +1,103 @@
+<!-- Hero -->
+<section
+  class="relative w-full h-80 md:h-96 flex items-end bg-cover bg-center mt-16"
+  style="background-image: url('/images/camp.png')">
+  <div class="absolute inset-0 bg-indigo-950/70"></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 pb-12 w-full">
+    <h1 class="text-5xl font-bold text-white mb-4">Our Programme</h1>
+    <p class="text-white/90 text-xl max-w-2xl leading-relaxed">
+      Preparation for leading universities is not a single event, but a progression over time.
+      Each stage reflects the academic and application requirements students face at that point
+      in their education.
+    </p>
+  </div>
+</section>
+
+<!-- Roadmap Image -->
+<section class="py-16 px-6 bg-white">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-gray-900 mb-2">Hills Academic Roadmap:</h2>
+    <h3 class="text-2xl font-bold text-gray-900 mb-10">The Path to G5 Excellence</h3>
+    <img
+      src="/images/pathway_roadmap.png"
+      alt="Hills Academic Roadmap"
+      class="w-full max-w-4xl mx-auto rounded shadow-sm" />
+  </div>
+</section>
+
+<!-- Explore Your Stage -->
+<section class="py-16 px-6 bg-white border-t border-gray-100">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Explore Your Stage</h2>
+
+    <!-- Year Tabs -->
+    <div class="flex gap-3 mb-10 flex-wrap">
+      @for (year of years; track year.key) {
+        <button
+          (click)="setYear(year.key)"
+          [class]="activeYear() === year.key
+            ? 'bg-indigo-700 text-white px-5 py-2 rounded text-sm font-semibold'
+            : 'bg-gray-100 text-gray-700 hover:bg-gray-200 px-5 py-2 rounded text-sm font-medium transition-colors'">
+          {{ year.label }}
+        </button>
+      }
+    </div>
+
+    <!-- Active Year Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="font-bold text-indigo-800 mb-4">What students face</h3>
+        <ol class="space-y-3">
+          @for (point of activeContent.studentsFace; track $index) {
+            <li class="flex gap-3 text-sm text-gray-700">
+              <span class="font-semibold text-indigo-700 flex-shrink-0">{{ $index + 1 }}.</span>
+              <span>{{ point }}</span>
+            </li>
+          }
+        </ol>
+      </div>
+      <div>
+        <h3 class="font-bold text-indigo-800 mb-4">How we can help</h3>
+        <div class="space-y-5">
+          @for (item of activeContent.howWeHelp; track item.title) {
+            <div class="border border-gray-200 rounded p-5">
+              <p class="font-semibold text-gray-800 text-sm mb-2">{{ item.title }}</p>
+              <p class="text-gray-600 text-sm leading-relaxed">{{ item.desc }}</p>
+              <a
+                routerLink="/book-a-consultation"
+                class="mt-3 inline-block border border-indigo-700 text-indigo-700 hover:bg-indigo-700 hover:text-white px-4 py-1.5 rounded text-xs font-medium transition-colors">
+                Find Out More
+              </a>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Not Sure Where to Begin -->
+<section class="py-16 px-6 bg-indigo-900">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 class="text-4xl font-bold text-white leading-tight">
+        Not Sure<br />Where to<br />Begin?
+      </h2>
+    </div>
+    <div>
+      <p class="text-white/85 leading-relaxed mb-6">
+        Each student progresses differently. If you would like to discuss your current academic
+        stage and possible next steps, we would be happy to help you form a personalised academic
+        plan.
+      </p>
+      <a
+        routerLink="/book-a-consultation"
+        class="inline-block border border-white text-white hover:bg-white hover:text-indigo-900 px-6 py-2.5 rounded text-sm font-medium transition-colors">
+        Book a consultation
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Footer -->
+<xs-contact-footer></xs-contact-footer>

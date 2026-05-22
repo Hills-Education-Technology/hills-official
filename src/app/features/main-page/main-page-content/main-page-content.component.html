@@ -1,8 +1,214 @@
-<!--scrollSection marks the scrollable area. DON'T REMOVE IT.-->
-<xs-main-page-banner scrollSection></xs-main-page-banner>
-<main class="relative bg-white">
-  <xs-main-page-intro scrollSection></xs-main-page-intro>
-  <xs-main-page-testimonials scrollSection></xs-main-page-testimonials>
-  <xs-main-page-business scrollSection></xs-main-page-business>
-  <xs-main-page-footer scrollSection></xs-main-page-footer>
-</main>
+<!-- Hero -->
+<section
+  class="relative w-full aspect-[1905/601] flex items-center bg-cover bg-center bg-no-repeat"
+  style="background-image: url('/images/bg_home.png')">
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div class="relative z-10 pl-40 pt-32 pb-16">
+    <h1 class="text-5xl md:text-6xl font-bold text-white leading-tight mb-6 max-w-2xl">
+      Oxbridge – Level<br />Academic Preparation
+    </h1>
+    <p class="text-xl text-white/90 mb-10 leading-relaxed">
+      Through education,<br />
+      we refine,<br />
+      reveal,<br />
+      and understand.
+    </p>
+    <a
+      routerLink="/book-a-consultation"
+      class="inline-block bg-indigo-700 hover:bg-indigo-800 text-white font-semibold px-8 py-3 rounded transition-colors">
+      Book a Consultation
+    </a>
+  </div>
+</section>
+
+<!-- Three Feature Cards -->
+<section class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="border border-gray-200 rounded p-8 flex flex-col">
+      <h3 class="text-lg font-bold text-gray-900 mb-3">Our Approach</h3>
+      <p class="text-gray-600 text-sm leading-relaxed flex-1">
+        We focus on how students think, not just what they know. Through discussion and structured
+        reasoning, students learn to approach unfamiliar problems with clarity and confidence.
+      </p>
+      <a routerLink="/about" class="mt-6 inline-block bg-indigo-700 hover:bg-indigo-800 text-white text-sm font-medium px-5 py-2 rounded transition-colors w-fit">
+        Find out more
+      </a>
+    </div>
+    <div class="border border-gray-200 rounded p-8 flex flex-col">
+      <h3 class="text-lg font-bold text-gray-900 mb-3">Our Tutors</h3>
+      <p class="text-gray-600 text-sm leading-relaxed flex-1">
+        Our tutors are Oxford and Cambridge graduates, with a research focus on explanation, not
+        instruction. Our teaching emphasises understanding, not shortcuts.
+      </p>
+      <a routerLink="/tutors" class="mt-6 inline-block bg-indigo-700 hover:bg-indigo-800 text-white text-sm font-medium px-5 py-2 rounded transition-colors w-fit">
+        Find out more
+      </a>
+    </div>
+    <div class="border border-gray-200 rounded p-8 flex flex-col">
+      <h3 class="text-lg font-bold text-gray-900 mb-3">Our Pathway</h3>
+      <p class="text-gray-600 text-sm leading-relaxed flex-1">
+        From academic foundations to interviews, preparation is approached as one continuous process.
+        Each programme is tailored to the individual student.
+      </p>
+      <a routerLink="/pathway" class="mt-6 inline-block bg-indigo-700 hover:bg-indigo-800 text-white text-sm font-medium px-5 py-2 rounded transition-colors w-fit">
+        Find out more
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Hills -->
+<section class="py-16 bg-white border-t border-gray-100">
+  <div class="max-w-6xl mx-auto px-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+    <div>
+      <h2 class="text-4xl font-bold text-indigo-900 mb-4">Why Hills</h2>
+      <p class="text-indigo-700 font-medium text-lg">An approach built on understanding</p>
+    </div>
+    <div>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        A considered approach to learning, focused on clarity, depth, and steady intellectual
+        development over time.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Inspired by the Oxford tutorial model, teaching centres on discussion and reasoning,
+        allowing students to engage more confidently with unfamiliar problems.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        The aim is to support not only successful applications, but continued independent thinking
+        beyond them.
+      </p>
+      <a routerLink="/about" class="inline-block bg-indigo-700 hover:bg-indigo-800 text-white font-medium px-6 py-2.5 rounded transition-colors">
+        Find out more
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Your Academic Pathway -->
+<section class="py-16 bg-white border-t border-gray-100">
+  <div class="max-w-6xl mx-auto px-10">
+    <div class="mb-12">
+      <h2 class="text-4xl font-bold text-indigo-900 mb-3">Your Academic Pathway</h2>
+      <p class="text-indigo-600 font-medium">
+        Structured support across each stage of the academic journey, from early foundations to
+        final applications.
+      </p>
+    </div>
+
+    <!-- Year 10 -->
+    <div class="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 py-10 border-t border-gray-200">
+      <div><span class="text-2xl font-bold text-indigo-900">Year 10</span></div>
+      <div>
+        <p class="font-semibold text-indigo-800 mb-2">What students need:</p>
+        <p class="text-gray-700 text-sm leading-relaxed mb-4">
+          As students begin more demanding academic study, many need stronger mathematical foundations,
+          better study habits, and greater confidence approaching unfamiliar problems.
+        </p>
+        <p class="font-semibold text-indigo-800 mb-2">What Hills offers:</p>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li>· Academic enrichment beyond standard school curricula</li>
+          <li>· Oxford-style problem-solving discussions</li>
+          <li>· Structured mentoring in mathematics and science</li>
+          <li>· Guidance on study habits, independent learning, and academic organisation</li>
+          <li>· Early preparation for advanced academic pathways and competitions</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Year 11 -->
+    <div class="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 py-10 border-t border-gray-200">
+      <div><span class="text-2xl font-bold text-indigo-900">Year 11</span></div>
+      <div>
+        <p class="font-semibold text-indigo-800 mb-2">What students need:</p>
+        <p class="text-gray-700 text-sm leading-relaxed mb-4">
+          As academic difficulty increases, students often need support moving beyond memorisation
+          towards deeper understanding and more independent problem solving. Many students also begin
+          exploring future university pathways and competitive academic opportunities.
+        </p>
+        <p class="font-semibold text-indigo-800 mb-2">What Hills offers:</p>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li>· Advanced support in reasoning in mathematics and science</li>
+          <li>· Competition-style problem solving and extension work</li>
+          <li>· Structured academic guidance beyond the school syllabus</li>
+          <li>· Early preparation for admissions tests and super-curricular exploration</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Year 12 -->
+    <div class="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 py-10 border-t border-gray-200">
+      <div><span class="text-2xl font-bold text-indigo-900">Year 12</span></div>
+      <div>
+        <p class="font-semibold text-indigo-800 mb-2">What students need:</p>
+        <p class="text-gray-700 text-sm leading-relaxed mb-4">
+          At this stage, students aiming for Oxbridge, Imperial, LSE and other top universities often
+          need to develop more independent academic thinking. Many students begin preparation for
+          competitions, admissions tests, and university-level academic discussion.
+        </p>
+        <p class="font-semibold text-indigo-800 mb-2">What Hills offers:</p>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li>· Specialist preparation for STEP, BMO, BPhO, UKCSQ, and other academic competitions</li>
+          <li>· Advanced academic mentoring through university-level reading and discussion</li>
+          <li>· Personalised tutorials focused on deeper understanding rather than memorisation</li>
+          <li>· Mentoring to help students explore subjects beyond the school syllabus</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Year 13 -->
+    <div class="grid grid-cols-1 md:grid-cols-[120px_1fr] gap-6 py-10 border-t border-gray-200">
+      <div><span class="text-2xl font-bold text-indigo-900">Year 13</span></div>
+      <div>
+        <p class="font-semibold text-indigo-800 mb-2">What students need:</p>
+        <p class="text-gray-700 text-sm leading-relaxed mb-4">
+          During the final stage of applications, students must learn to think clearly under pressure,
+          communicate ideas effectively, and approach unfamiliar academic questions with confidence.
+        </p>
+        <p class="font-semibold text-indigo-800 mb-2">What Hills offers:</p>
+        <ul class="text-gray-700 text-sm space-y-1">
+          <li>· Structured preparation for ESAT, TMUA, and other admissions tests</li>
+          <li>· Oxbridge-style mock interviews focused on academic discussion and reasoning</li>
+          <li>· Guidance on personal statements and academic reflection</li>
+          <li>· One-to-one mentoring tailored to each student's target course and university</li>
+          <li>· Interview preparation designed to develop confidence, clarity, and independent thinking</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-6 border-t border-gray-200">
+      <a routerLink="/pathway" class="inline-block bg-indigo-700 hover:bg-indigo-800 text-white font-medium px-6 py-2.5 rounded transition-colors">
+        Explore the full pathway
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Meet Our Founder -->
+<section class="py-16 bg-white border-t border-gray-100">
+  <div class="max-w-6xl mx-auto px-10">
+    <h2 class="text-4xl font-bold text-indigo-900 mb-10">Meet Our Founder</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <img
+        src="/images/kevin.png"
+        alt="Dr Kevin Chen"
+        class="w-full rounded object-cover max-h-96 object-top" />
+      <div>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Dr Kevin Chen spent nine years at the University of Oxford, specialising in engineering
+          science and applied mathematics. As a former admissions test marker and experienced tutor,
+          he brings direct insight into how top universities assess students.
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-8">
+          His work at Hills reflects a simple principle: students succeed not by knowing more, but
+          by thinking more clearly.
+        </p>
+        <a routerLink="/about" class="inline-block bg-indigo-700 hover:bg-indigo-800 text-white font-medium px-6 py-2.5 rounded transition-colors">
+          Learn more
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Footer -->
+<xs-contact-footer></xs-contact-footer>

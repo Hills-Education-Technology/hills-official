@@ -1,0 +1,86 @@
+<section class="contact-footer bg-[#f2f2f2] py-16">
+  <div class="max-w-6xl mx-auto px-10">
+    <h2 class="text-5xl font-bold text-indigo-900 mb-2">Contact Us</h2>
+    <p class="text-gray-600 mb-6">Email: contact&#64;hillsedtech.com</p>
+    <hr class="border-indigo-800 mb-8" />
+    <p-toast />
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="flex flex-col gap-1">
+          <label class="text-sm text-gray-700">First name *</label>
+          <input
+            pInputText
+            formControlName="firstName"
+            placeholder="First name"
+            class="border-0 border-b border-gray-400 rounded-none bg-transparent focus:shadow-none"
+            [ngClass]="{'ng-invalid ng-dirty': form.get('firstName')?.invalid && form.get('firstName')?.touched}" />
+          @if (form.get('firstName')?.invalid && form.get('firstName')?.touched) {
+            <p-message severity="error" variant="simple" size="small">Required</p-message>
+          }
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="text-sm text-gray-700">Last name *</label>
+          <input
+            pInputText
+            formControlName="lastName"
+            placeholder="Last name"
+            class="border-0 border-b border-gray-400 rounded-none bg-transparent"
+            [ngClass]="{'ng-invalid ng-dirty': form.get('lastName')?.invalid && form.get('lastName')?.touched}" />
+          @if (form.get('lastName')?.invalid && form.get('lastName')?.touched) {
+            <p-message severity="error" variant="simple" size="small">Required</p-message>
+          }
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="flex flex-col gap-1">
+          <label class="text-sm text-gray-700">Email *</label>
+          <input
+            pInputText
+            type="email"
+            formControlName="email"
+            placeholder="Email"
+            class="border-0 border-b border-gray-400 rounded-none bg-transparent"
+            [ngClass]="{'ng-invalid ng-dirty': form.get('email')?.invalid && form.get('email')?.touched}" />
+          @if (form.get('email')?.invalid && form.get('email')?.touched) {
+            <p-message severity="error" variant="simple" size="small">Valid email required</p-message>
+          }
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="text-sm text-gray-700">Phone</label>
+          <input
+            pInputText
+            type="tel"
+            formControlName="phone"
+            placeholder="Phone"
+            class="border-0 border-b border-gray-400 rounded-none bg-transparent" />
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <label class="text-sm text-gray-700">Level of Study</label>
+        <div class="flex flex-wrap gap-8">
+          @for (opt of levelOfStudyOptions; track opt.value) {
+            <div class="flex items-center gap-2">
+              <p-checkbox [inputId]="opt.value" [value]="opt.value" formControlName="levelOfStudy"></p-checkbox>
+              <label [for]="opt.value" class="cursor-pointer">{{ opt.label }}</label>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+        <label class="text-sm text-gray-700">Message</label>
+        <textarea
+          pTextarea
+          formControlName="message"
+          rows="4"
+          class="resize-none w-full border-0 border-b border-gray-400 rounded-none bg-transparent"></textarea>
+      </div>
+      <div class="flex justify-end pt-2">
+        <button
+          type="submit"
+          class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-10 py-3 rounded-full transition-colors cursor-pointer">
+          Send
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

@@ -5,50 +5,33 @@ export const routes: Routes = [
   {
     path: 'home',
     loadComponent: () =>
-      import(
-        './features/main-page/main-page-content/main-page-content.component'
-      ).then(m => m.MainPageContentComponent),
-  },
-  {
-    path: 'about-us',
-    loadComponent: () =>
-      import('./features/about-us/about-us.component').then(
-        m => m.AboutUsComponent
+      import('./features/main-page/main-page-content/main-page-content.component').then(
+        m => m.MainPageContentComponent
       ),
   },
   {
-    path: 'teachers',
+    path: 'about',
     loadComponent: () =>
-      import('./features/teachers/teachers.component').then(
-        m => m.TeachersComponent
+      import('./features/about-us/about-us.component').then(m => m.AboutUsComponent),
+  },
+  {
+    path: 'tutors',
+    loadComponent: () =>
+      import('./features/tutors/tutors.component').then(m => m.TutorsComponent),
+  },
+  {
+    path: 'pathway',
+    loadComponent: () =>
+      import('./features/pathway/pathway.component').then(m => m.PathwayComponent),
+  },
+  {
+    path: 'book-a-consultation',
+    loadComponent: () =>
+      import('./features/book-consultation/book-consultation.component').then(
+        m => m.BookConsultationComponent
       ),
   },
-  {
-    path: 'contact-us',
-    loadComponent: () =>
-      import('./features/contact-us/contact-us.component').then(
-        m => m.ContactUsComponent
-      ),
-  },
-  {
-    path: 'products',
-    // loadComponent: () =>
-    //   import('./features/products/products.component').then(
-    //     m => m.ProductsComponent
-    //   ),
-    loadChildren: () =>
-      import('./features/products/products.routes').then(m => m.productsRoutes),
-  },
-  {
-    path: 'success-stories',
-    loadComponent: () =>
-      import('./features/success-stories/success-stories.component').then(
-        m => m.SuccessStoriesComponent
-      ),
-  },
-  {
-    path: '**',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  }
+  { path: 'about-us', redirectTo: '/about', pathMatch: 'full' },
+  { path: 'contact-us', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];

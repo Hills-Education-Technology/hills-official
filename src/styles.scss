@@ -3,6 +3,21 @@
 @plugin 'tailwindcss-primeui';
 @layer tailwind, primeng;
 
+:root {
+  --font-family: "Madefor", "Helvetica Neue", Helvetica, Arial, "メイリオ", "meiryo", "ヒラギノ角ゴ pro w3", "hiragino kaku gothic pro", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 530;
+  --font-weight-bold: 700;
+  --font-weight-xbold: 800;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
